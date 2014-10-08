@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
 
-if ! command -v node 2>&1 > /dev/null; then
+if ! command -v node 2>&1 > /dev/null || ! command -v npm 2>&1; then
   exit ${ERROR}
+fi
+
+npm > /dev/null 2>&1
+if (( $? != 0 )); then
+  exit $?
+fi
+
+node -v > /dev/null 2>&1
+if (( $? != 0 )); then
+  exit $?
 fi
 

@@ -5,7 +5,8 @@ node_version=$(curl --silent --get --data-urlencode "range=${semver_range}" http
 node_url="http://s3pository.heroku.com/node/v$node_version/node-v$node_version-linux-x64.tar.gz"
 curl $node_url -s -o - | tar xzf - -C $(pwd)
 mv node-v${node_version}-linux-x64 node
+ls node/bin
+export PATH="$(pwd)/node/bin:${PATH}"
 mkdir -p ${SERVICE}/bin
-install $(ls node/bin/*) ${SERVICE}/bin
 
 exit $?
