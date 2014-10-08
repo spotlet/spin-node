@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
-nave.sh usemain 0.10
-npm -v
-node -v
+./nave usemain 0.10 || exit ${ERROR}
+npm -v || exit ${ERROR}
+node -v || exit ${ERROR}
+
