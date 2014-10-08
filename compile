@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
 
-echo 123
-./nave.sh usemain 0.10
-#semver_range="0.10"
-#node_version=$(curl --silent --get --data-urlencode "range=${semver_range}" https://semver.io/node/resolve)
-#node_url="http://s3pository.heroku.com/node/v$node_version/node-v$node_version-linux-x64.tar.gz"
-#curl $node_url -s -o - | tar xzf - -C $(pwd)
-#mv node-v${node_version}-linux-x64 node
-#export PATH="$(pwd)/node/bin:${PATH}"
-#curl -sL https://npmjs.org/install.sh | sh
-#mkdir -p ${SERVICE}/bin
-#exit $?
+nave.sh usemain 0.10
+npm -v
+node -v
