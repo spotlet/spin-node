@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-./nave usemain 0.10 || exit ${ERROR}
-npm -v || exit ${ERROR}
-node -v || exit ${ERROR}
+## install node
+./nave usemain "${NODE_VERSION:-stable}" || exit ${ERROR}
+
+## ensure node/npm work
+npm -v  > /dev/null 2>&1 || exit ${ERROR}
+node -v > /dev/null 2>&1 || exit ${ERROR}
+
+exit $?
 
